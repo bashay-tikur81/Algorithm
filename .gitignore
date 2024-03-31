@@ -1,0 +1,5 @@
+# The following files are intended to be ignored from being tracked by Git
+
+*.org~
+*~
+
