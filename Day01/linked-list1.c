@@ -25,15 +25,17 @@ int main(){
     printf("The value is:");
     scanf("%d",&value);
     insertnth(position,value);
-    print();
+    print(head);
 }
 void insert(int x){
     node * temp = (node*) malloc(sizeof(node));
-    if(temp != NULL){
-	temp->data = x;
-	temp->next = head;
-	head = temp;
+    if(temp == NULL){
+	printf("Can't allocate memory!\n");
+	return;
     }
+    temp->data = x;
+    temp->next = head;
+    head = temp;
 }
 
 void insertnth(int place, int value){
@@ -61,12 +63,11 @@ void insertnth(int place, int value){
 	counter++;
     }
 }
-void print(){
-    node * temp = head;
+void print(node *Node){
     printf("List is:");
-    while(temp != NULL){
-	printf(" %d",temp->data);
-	temp = temp->next;
+    while(Node != NULL){
+	printf(" %d",Node->data);
+	Node = Node->next;
     }
     printf("\n");
 }
