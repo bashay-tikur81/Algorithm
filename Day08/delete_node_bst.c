@@ -89,7 +89,7 @@ node* delete_node(node* del, int value){
 	else if (del->left == NULL){
 	    node *temp = del;
 	    del = del->right;
-	    free(del);
+	    free(temp);
 	    
 	}
 	else if (del->right == NULL){
